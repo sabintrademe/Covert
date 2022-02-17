@@ -24,7 +24,7 @@ jobs:
       - name: Release build
         run: ./gradlew :covert:assembleRelease
 
-        # Generates other artifacts (javadocJar is optional)
+        # Generates other artifacts
       - name: Source jar and dokka
         run: ./gradlew androidSourcesJar javadocJar
 
