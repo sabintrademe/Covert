@@ -7,6 +7,7 @@ on:
       - 'snapshot/**'
 
 jobs:
+
   publish:
     name: Snapshot build and publish
     runs-on: ubuntu-latest
@@ -25,6 +26,12 @@ jobs:
         run: ./gradlew androidSourcesJar javadocJar
       - name: Publish to MavenCentral
         run: ./gradlew publishReleasePublicationToSonatypeRepository
+      - name: Create SNAPSHOT
+        uses: actions/upload-artifact@v2
+        with:
+         name: snapshot
+         path: build/outputs/aar/
+
         env:
           OSSRH_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           OSSRH_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
