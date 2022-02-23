@@ -7,7 +7,6 @@ on:
       - 'snapshot/**'
 
 jobs:
-
   publish:
     name: Snapshot build and publish
     runs-on: ubuntu-latest
