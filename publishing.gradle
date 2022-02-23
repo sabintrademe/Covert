@@ -26,6 +26,7 @@ artifacts {
     archives javadocJar
 }
 
+version PUBLISH_VERSION
 
 afterEvaluate {
     publishing {
