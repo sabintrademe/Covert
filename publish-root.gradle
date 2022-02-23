@@ -32,12 +32,9 @@ if (snapshot) {
 
 // Set up Sonatype repository
 nexusPublishing {
-    useStaging.set(provider {
-        !rootVersionName.toString().endsWith("-SNAPSHOT")
-    })
     repositories {
         sonatype {
-
+            version = rootVersionName
             stagingProfileId = sonatypeStagingProfileId
             username = ossrhUsername
             password = ossrhPassword
